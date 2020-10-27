@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AxonTestApp</string>
+    <string name="user_list_activity_title">Home</string>
+    <string name="profile_activity_title">Profile</string>
+</resources>
