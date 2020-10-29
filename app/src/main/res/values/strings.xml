@@ -5,4 +5,10 @@
     <string name="base_url">https://randomuser.me/api/</string>
     <string name="error_message">Something went wrong. Try again later.</string>
     <string name="error_no_internet">Please check your internet connection.</string>
+    <string name="user_picture_description">User picture</string>
+    <string name="default_text">Default text</string>
+    <string name="default_age">23 years old</string>
+    <string name="default_phone">+3(890)893–25–43</string>
+    <string name="years_old">years old</string>
+    <string name="year_old">year old</string>
 </resources>

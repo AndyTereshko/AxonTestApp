@@ -2,11 +2,13 @@ package com.tereshko.andriy.axontestapp.view;
 import android.os.Bundle;
 import com.tereshko.andriy.axontestapp.R;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 /**
  * Created by andy on 27/10/20
  */
 
-public class ProfileActivity extends ParentActivity {
+public class ProfileActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

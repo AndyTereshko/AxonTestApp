@@ -27,6 +27,10 @@ public class UserListViewModel extends ViewModel {
         return users;
     }
 
+    public void loadMoreUser(){
+        loadUsers();
+    }
+
     public LiveData<Boolean> getIsNetworkErrorThrown() {
         return isNetworkErrorThrown;
     }
