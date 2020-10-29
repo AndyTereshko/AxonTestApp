@@ -1,6 +1,7 @@
 package com.tereshko.andriy.axontestapp.view.adapter;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 import com.tereshko.andriy.axontestapp.R;
+import com.tereshko.andriy.axontestapp.model.RecyclerViewClickListener;
 import com.tereshko.andriy.axontestapp.model.Result;
 import java.util.List;
 import androidx.annotation.NonNull;
@@ -22,11 +24,13 @@ import butterknife.ButterKnife;
 public class UserRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     public List<Result> itemList;
+    private static RecyclerViewClickListener itemClickListener;
     private final int VIEW_TYPE_ITEM = 0;
     private final int VIEW_TYPE_LOADING = 1;
 
-    public UserRecyclerAdapter(List<Result> itemList) {
+    public UserRecyclerAdapter(List<Result> itemList, RecyclerViewClickListener itemClickListener) {
         this.itemList = itemList;
+        UserRecyclerAdapter.itemClickListener = itemClickListener;
     }
 
     @NonNull
@@ -61,7 +65,7 @@ public class UserRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         return itemList.get(position) == null ? VIEW_TYPE_LOADING : VIEW_TYPE_ITEM;
     }
 
-    static class UserViewHolder extends RecyclerView.ViewHolder {
+    static class UserViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         @SuppressLint("NonConstantResourceId")
         @BindView(R.id.user_list_full_name)
@@ -77,10 +81,11 @@ public class UserRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         ImageView picture;
         View itemView;
 
-        public UserViewHolder(@NonNull View itemView) {
+        public UserViewHolder (@NonNull View itemView) {
             super(itemView);
             this.itemView = itemView;
             ButterKnife.bind(this, itemView);
+            itemView.setOnClickListener(this);
         }
 
         public void bind(Result result){
@@ -95,6 +100,11 @@ public class UserRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             ageTextView.setText(String.format("%s %s", result.getDob().getAge(), yearsOld));
             phoneTextView.setText(String.format("%s", result.getPhone()));
             Picasso.get().load(result.getUserPicture().getPictureURL()).into(picture);
+        }
+
+        @Override
+        public void onClick(View view) {
+            itemClickListener.recyclerViewListClicked(view, this.getAdapterPosition());
         }
     }
 

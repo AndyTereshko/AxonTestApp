@@ -2,8 +2,14 @@
 <resources>
     <dimen name="user_list_item_height">64dp</dimen>
     <dimen name="user_list_item_picture_size">48dp</dimen>
+    <dimen name="user_list_item_picture_corner_radius">24dp</dimen>
     <dimen name="user_list_item_margin">8dp</dimen>
     <dimen name="user_list_item_text_size">14sp</dimen>
     <dimen name="user_list_item_text_length">200dp</dimen>
     <dimen name="user_list_item_text_size_small">8sp</dimen>
+    <dimen name="profile_picture_size">128dp</dimen>
+    <dimen name="profile_picture_corner_radius">60dp</dimen>
+    <dimen name="profile_margin">16dp</dimen>
+    <dimen name="profile_margin_small">4dp</dimen>
+    <dimen name="profile_call_picture_size">42dp</dimen>
 </resources>

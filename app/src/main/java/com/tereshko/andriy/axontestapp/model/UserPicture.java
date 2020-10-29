@@ -4,10 +4,12 @@ import com.google.gson.annotations.SerializedName;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.io.Serializable;
+
 /**
  * Created by andy on 28/10/20
  */
-public class UserPicture {
+public class UserPicture implements Serializable {
 
     @SerializedName("large")
     private String pictureURL;

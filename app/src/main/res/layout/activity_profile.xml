@@ -1,8 +1,220 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="false"
+    android:orientation="vertical"
     tools:context=".view.ProfileActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/user_profile_item_card_view"
+            android:layout_width="@dimen/profile_picture_size"
+            android:layout_height="@dimen/profile_picture_size"
+            android:layout_marginTop="@dimen/profile_margin"
+            android:layout_gravity="center_horizontal"
+            app:cardCornerRadius="@dimen/profile_picture_corner_radius"
+            >
+            <ImageView
+                android:id="@+id/user_profile_item_picture"
+                android:layout_width="@dimen/profile_picture_size"
+                android:layout_height="@dimen/profile_picture_size"
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/user_picture_description"
+                />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/user_profile_full_name"
+            android:layout_width="@dimen/user_list_item_text_length"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/profile_margin"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="@dimen/user_list_item_text_size"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:gravity="center"
+            tools:text="@string/default_text"
+            tools:ignore="RtlHardcoded" />
+
+        <TextView
+            android:id="@+id/user_profile_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/profile_margin_small"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:textSize="@dimen/user_list_item_text_size_small"
+            tools:text="@string/default_age"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gender"
+            android:layout_marginTop="@dimen/profile_margin"
+            android:layout_marginStart="@dimen/profile_margin"
+            android:layout_gravity="start"
+            android:gravity="center"
+            android:textSize="@dimen/user_list_item_text_size_small"
+            android:layout_marginLeft="@dimen/profile_margin" />
+
+        <TextView
+            android:id="@+id/user_profile_gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:layout_marginTop="@dimen/profile_margin_small"
+            android:layout_marginLeft="@dimen/profile_margin"
+            android:layout_marginStart="@dimen/profile_margin"
+            android:layout_gravity="start"
+            android:gravity="center"
+            android:textSize="@dimen/user_list_item_text_size_small"
+            tools:text="@string/gender_male"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/date_of_birth"
+            android:layout_marginTop="@dimen/profile_margin"
+            android:layout_marginStart="@dimen/profile_margin"
+            android:layout_gravity="start"
+            android:gravity="center"
+            android:textSize="@dimen/user_list_item_text_size_small"
+            android:layout_marginLeft="@dimen/profile_margin" />
+
+        <TextView
+            android:id="@+id/user_profile_date_of_birth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:layout_marginTop="@dimen/profile_margin_small"
+            android:layout_marginLeft="@dimen/profile_margin"
+            android:layout_marginStart="@dimen/profile_margin"
+            android:layout_gravity="start"
+            android:gravity="center"
+            android:textSize="@dimen/user_list_item_text_size_small"
+            tools:text="@string/default_date_of_birth"
+            />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cell_phone"
+                    android:layout_marginTop="@dimen/profile_margin"
+                    android:layout_marginStart="@dimen/profile_margin"
+                    android:layout_gravity="start"
+                    android:gravity="center"
+                    android:textSize="@dimen/user_list_item_text_size_small"
+                    android:layout_marginLeft="@dimen/profile_margin" />
+
+                <TextView
+                    android:id="@+id/user_profile_cell_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:layout_marginTop="@dimen/profile_margin_small"
+                    android:layout_marginLeft="@dimen/profile_margin"
+                    android:layout_marginStart="@dimen/profile_margin"
+                    android:layout_gravity="start"
+                    android:gravity="center"
+                    android:textSize="@dimen/user_list_item_text_size_small"
+                    tools:text="@string/default_phone"
+                    />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/call_button"
+                android:layout_gravity="end"
+                android:scaleType="centerCrop"
+                android:background="@color/green_200"
+                android:adjustViewBounds="true"
+                android:layout_width="@dimen/profile_call_picture_size"
+                android:layout_height="@dimen/profile_call_picture_size"
+                android:src="@mipmap/ic_call_foreground"
+                android:contentDescription="@string/call_button" />
+        </LinearLayout>
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/email"
+            android:layout_marginTop="@dimen/profile_margin"
+            android:layout_marginStart="@dimen/profile_margin"
+            android:layout_gravity="start"
+            android:gravity="center"
+            android:textSize="@dimen/user_list_item_text_size_small"
+            android:layout_marginLeft="@dimen/profile_margin" />
+
+        <TextView
+            android:id="@+id/user_profile_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:layout_marginTop="@dimen/profile_margin_small"
+            android:layout_marginLeft="@dimen/profile_margin"
+            android:layout_marginStart="@dimen/profile_margin"
+            android:layout_gravity="start"
+            android:gravity="center"
+            android:textSize="@dimen/user_list_item_text_size_small"
+            tools:text="@string/default_email"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/location"
+            android:layout_marginTop="@dimen/profile_margin"
+            android:layout_marginStart="@dimen/profile_margin"
+            android:layout_gravity="start"
+            android:gravity="center"
+            android:textSize="@dimen/user_list_item_text_size_small"
+            android:layout_marginLeft="@dimen/profile_margin" />
+
+        <TextView
+            android:id="@+id/user_profile_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/profile_margin_small"
+            android:layout_marginLeft="@dimen/profile_margin"
+            android:layout_marginStart="@dimen/profile_margin"
+            android:layout_gravity="start"
+            android:gravity="center"
+            android:textSize="@dimen/user_list_item_text_size_small"
+            tools:text="@string/default_location"
+            />
+
+    </LinearLayout>
+
+</ScrollView>

@@ -3,13 +3,15 @@ package com.tereshko.andriy.axontestapp.model;
 import android.os.Build;
 import com.google.gson.annotations.SerializedName;
 import org.jetbrains.annotations.NotNull;
+
+import java.io.Serializable;
 import java.util.Objects;
 import androidx.annotation.RequiresApi;
 
 /**
  * Created by andy on 27/10/20
  */
-public class Result {
+public class Result implements Serializable {
 
     @SerializedName("name")
     private Name name;
@@ -23,6 +25,17 @@ public class Result {
     private String phone;
     @SerializedName("picture")
     private UserPicture userPicture;
+    @SerializedName("gender")
+    private String gender;
+
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
 
     public Name getName() {
         return name;
@@ -96,6 +109,7 @@ public class Result {
     public @NotNull String toString() {
         return "Result{" +
                 "name=" + name.toString() +
+                ", gender='" + gender + '\'' +
                 ", dob=" + dob.toString() +
                 ", email='" + email + '\'' +
                 ", location=" + location.toString() +

@@ -4,10 +4,12 @@ import com.google.gson.annotations.SerializedName;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.io.Serializable;
+
 /**
  * Created by andy on 27/10/20
  */
-public class Name {
+public class Name implements Serializable {
 
     @SerializedName("first")
     private String firstName;

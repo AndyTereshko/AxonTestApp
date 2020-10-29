@@ -9,6 +9,6 @@ import retrofit2.http.GET;
  */
 public interface UserService {
 
-    @GET("?results=20&inc=name,dob,location,email,phone,picture&noinfo")
+    @GET("?results=20&inc=name,gender,dob,location,email,phone,picture&noinfo")
     Observable<NetworkAnswer> getUsers(); //TODO: use ResponseBody in case of empty response
 }

@@ -11,4 +11,16 @@
     <string name="default_phone">+3(890)893–25–43</string>
     <string name="years_old">years old</string>
     <string name="year_old">year old</string>
+    <string name="cell_phone">Cell Phone</string>
+    <string name="email">Email</string>
+    <string name="location">Location</string>
+    <string name="default_email">test@test.com</string>
+    <string name="default_location">Kyiv, Ukraine</string>
+    <string name="gender_male">Male</string>
+    <string name="gender_female">Female</string>
+    <string name="unknown">Unknown</string>
+    <string name="gender">Gender</string>
+    <string name="default_date_of_birth">2020–01–01</string>
+    <string name="date_of_birth">Date of birth</string>
+    <string name="call_button">Call button</string>
 </resources>

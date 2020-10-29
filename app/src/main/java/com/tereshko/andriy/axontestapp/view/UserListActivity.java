@@ -1,10 +1,13 @@
 package com.tereshko.andriy.axontestapp.view;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 import com.tereshko.andriy.axontestapp.BuildConfig;
 import com.tereshko.andriy.axontestapp.R;
+import com.tereshko.andriy.axontestapp.model.RecyclerViewClickListener;
 import com.tereshko.andriy.axontestapp.model.Result;
 import com.tereshko.andriy.axontestapp.utils.Utils;
 import com.tereshko.andriy.axontestapp.view.adapter.UserRecyclerAdapter;
@@ -24,7 +27,7 @@ import timber.log.Timber;
  * Created by andy on 27/10/20
  */
 
-public class UserListActivity extends AppCompatActivity {
+public class UserListActivity extends AppCompatActivity implements RecyclerViewClickListener {
 
     UserListViewModel userListViewModel;
     UserRecyclerAdapter recyclerAdapter;
@@ -53,7 +56,7 @@ public class UserListActivity extends AppCompatActivity {
     }
 
     private void initRecyclerView(){
-        recyclerAdapter = new UserRecyclerAdapter(completeUserList);
+        recyclerAdapter = new UserRecyclerAdapter(completeUserList, this);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         userListRecyclerView.setLayoutManager(layoutManager);
         userListRecyclerView.setAdapter(recyclerAdapter);
@@ -110,4 +113,10 @@ public class UserListActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void recyclerViewListClicked(View v, int pos) {
+        Intent intent = new Intent(this, ProfileActivity.class);
+        intent.putExtra(Utils.userObject, completeUserList.get(pos));
+        startActivity(intent);
+    }
 }

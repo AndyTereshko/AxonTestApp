@@ -4,15 +4,17 @@ import com.google.gson.annotations.SerializedName;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.io.Serializable;
+
 /**
  * Created by andy on 27/10/20
  */
-public class Location {
+public class Location implements Serializable {
 
     @SerializedName("city")
     private String city;
-    @SerializedName("state")
-    private String state;
+    @SerializedName("country")
+    private String country;
 
     public String getCity() {
         return city;
@@ -22,19 +24,19 @@ public class Location {
         this.city = city;
     }
 
-    public String getState() {
-        return state;
+    public String getCountry() {
+        return country;
     }
 
-    public void setState(String state) {
-        this.state = state;
+    public void setCountry(String country) {
+        this.country = country;
     }
 
     @Override
     public @NotNull String toString() {
         return "Location{" +
                 "city='" + city + '\'' +
-                ", state='" + state + '\'' +
+                ", country='" + country + '\'' +
                 '}';
     }
 }

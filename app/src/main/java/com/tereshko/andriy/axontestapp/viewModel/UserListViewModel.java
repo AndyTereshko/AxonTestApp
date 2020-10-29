@@ -47,7 +47,7 @@ public class UserListViewModel extends ViewModel {
 
             @Override
             public void returnError(String message) {
-                isNetworkErrorThrown.setValue(true);
+                isNetworkErrorThrown.setValue(true);  //TODO: repeat on http 503 after some time
                 Timber.d("Network error: %s" , message);
             }
         });
